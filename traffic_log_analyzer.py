@@ -66,3 +66,4 @@ def visualize_log_counts(df):
     plt.tight_layout()
     plt.savefig("log_type_counts.png")
     plt.show()
+    visualize_log_counts(df)
