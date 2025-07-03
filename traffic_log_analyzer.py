@@ -49,3 +49,20 @@ if __name__ == "__main__":
     else:
         print(f"❌ Log file '{log_file_path}' not found.")
 
+import matplotlib.pyplot as plt
+
+def visualize_log_counts(df):
+    if df.empty:
+        print("⚠️ No data to visualize.")
+        return
+
+    counts = df['log_type'].value_counts()
+    plt.figure(figsize=(10, 6))
+    counts.plot(kind='bar', color='skyblue', edgecolor='black')
+    plt.title("Log Type Frequency")
+    plt.xlabel("Log Type")
+    plt.ylabel("Count")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig("log_type_counts.png")
+    plt.show()
