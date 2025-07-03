@@ -12,47 +12,35 @@ A Python-based tool to parse and analyze roadside toll transaction logs. Helps I
 - Built for real-world tolling log formats
 - Lightweight and extendable
 
-## 📁 Sample Log Format
+# 🚦 Toll Log Analyzer using Streamlit
 
-```
-2025-06-30 08:01:15 INFO TR START lane=3 passage=TP03 device=SU01
-2025-06-30 08:01:20 WARN ANPR FAIL lane=3 passage=TP03 device=ANPR03
-2025-06-30 08:01:45 INFO TR END lane=3 passage=TP03 device=SU01
-2025-06-30 08:03:00 ERROR SU ERROR lane=3 passage=TP04 device=SU02
-```
+This project is a **log analysis and visualization web app** built using **Python** and **Streamlit**. It parses raw tolling system logs (e.g., from `CoreCallback.cpp`) to extract log events like `VP2`, `VS`, `OIR`, `FTP`, etc., and provides a dashboard to analyze and visualize the log type frequency.
 
-## ⚙️ How to Run
+---
 
-1. Clone this repo
-2. Add your log file as `sample_toll_log.txt`
-3. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-4. Run the analyzer:
-   ```
-   python traffic_log_analyzer.py
-   ```
+## 📂 Features
 
-Output will be saved to: `log_summary.csv`
+- 📥 Upload raw `.txt` or `.log` toll system log files
+- 🧠 Extracts:
+  - Log type (e.g., `VP2`, `VS`)
+  - Object ID (e.g., `ID:715`)
+  - Details like vehicle dimensions or exit info
+- 📊 Interactive bar chart showing log type frequency
+- 📋 Data table preview of extracted results
+- ✅ Built with `Streamlit`, `Pandas`, and optionally `Matplotlib`
 
-## 📊 Output Example
+---
 
-| Event Type      | Count |
-|-----------------|-------|
-| TR START Count  | 10    |
-| TR END Count    | 10    |
-| ANPR Failures   | 3     |
-| SU Errors       | 1     |
-| Unique Devices  | 4     |
+## 🖼️ Sample Screenshot
 
-## 🔧 Skills Practiced
+![sample-ui](./screenshot.png)
 
-- Python
-- Regex
-- DataFrame analysis (Pandas)
-- Real-world ITS log understanding
+---
 
-## 👨‍💻 Author
+## 📦 Requirements
 
-Designed by an ITS Support Engineer for real-world RCA simulation. Ready to demonstrate in interviews or automation tests.
+Install the required Python libraries:
+
+```bash
+pip install -r requirements.txt
+
